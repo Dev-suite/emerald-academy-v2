@@ -4,7 +4,7 @@ import type { ContentTypeEnum } from '../metadata/content-types.enum';
 
 export interface Filter {
 	title: string;
-	slug: 'type-of-content' | 'subject' | 'expertise';
+	slug: 'type-of-content' | 'subject' | 'expertise' | 'type-of-community-content';
 	filterElement: FilterElement[];
 	filterBucket: FilterSlugs[];
 }

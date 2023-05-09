@@ -18,14 +18,6 @@ export const typeOfContentFilter: Filter = {
 		{
 			icon: 'icon',
 			slug: ContentTypeEnum.Roadmap
-		},
-		{
-			icon: 'icon',
-			slug: ContentTypeEnum.Blog
-		},
-		{
-			icon: 'icon',
-			slug: ContentTypeEnum.Tweet
 		}
 	],
 	filterBucket: []
@@ -55,16 +47,34 @@ export const expertiseFilter: Filter = {
 	filterBucket: []
 };
 
+export const typeOfCommunityContentFilter: Filter = {
+	title: 'Type of content',
+	slug: 'type-of-community-content',
+	filterElement: [
+		{
+			icon: 'icon',
+			slug: ContentTypeEnum.Blog
+		},
+		{
+			icon: 'icon',
+			slug: ContentTypeEnum.Tweet
+		}
+	],
+	filterBucket: []
+};
+
 export const createFilters = (activeFilters: {
 	typeOfContent: boolean;
 	subject: boolean;
 	expertise: boolean;
+	typeOfCommunityContent: boolean;
 }) => {
 	const filters = [];
 
 	typeOfContentFilter.filterBucket = [];
 	subjectFilter.filterBucket = [];
 	expertiseFilter.filterBucket = [];
+	typeOfCommunityContentFilter.filterBucket = [];
 
 	if (activeFilters.typeOfContent) {
 		filters.push(typeOfContentFilter);
@@ -74,6 +84,9 @@ export const createFilters = (activeFilters: {
 	}
 	if (activeFilters.expertise) {
 		filters.push(expertiseFilter);
+	}
+	if (activeFilters.typeOfCommunityContent) {
+		filters.push(typeOfCommunityContentFilter);
 	}
 
 	return filters;

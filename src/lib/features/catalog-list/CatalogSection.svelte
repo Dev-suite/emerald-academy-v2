@@ -15,13 +15,15 @@
 	export let typeOfContentFilter = true;
 	export let expertiseFilter = true;
 	export let subjectFilter = true;
+	export let typeOfCommunityContentFilter = false;
 
 	let filters: Filter[] = [];
 
 	let activeFilters = {
 		typeOfContent: typeOfContentFilter,
 		expertise: expertiseFilter,
-		subject: subjectFilter
+		subject: subjectFilter,
+		typeOfCommunityContent: typeOfCommunityContentFilter
 	};
 
 	onMount(() => {

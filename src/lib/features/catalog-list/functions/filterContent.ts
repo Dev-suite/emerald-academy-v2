@@ -9,6 +9,7 @@ export const filterContent = async (
 		typeOfContent: boolean;
 		subject: boolean;
 		expertise: boolean;
+		typeOfCommunityContent: boolean;
 	}
 ) => {
 	let filteredContent = contents;
@@ -23,6 +24,9 @@ export const filterContent = async (
 
 	if (activeFilters.expertise) {
 		filteredContent = await filterExpertise(_filters, filteredContent);
+	}
+	if (activeFilters.typeOfCommunityContent) {
+		filteredContent = await filterTypeOfCommunityContent(_filters, filteredContent);
 	}
 
 	return filteredContent;
@@ -63,6 +67,18 @@ const filterExpertise = async (_filters: Filter[], contents: Overview[]) => {
 		return (
 			filter[0].filterBucket.includes(content.metadata.expertise) ||
 			filter[0].filterBucket.length < 1
+		);
+	});
+};
+
+const filterTypeOfCommunityContent = async (_filters: Filter[], contents: Overview[]) => {
+	const filter = _filters.filter((flt) => {
+		return flt.slug === 'type-of-community-content';
+	});
+
+	return contents.filter((content) => {
+		return (
+			filter[0].filterBucket.includes(content.contentType) || filter[0].filterBucket.length < 1
 		);
 	});
 };
