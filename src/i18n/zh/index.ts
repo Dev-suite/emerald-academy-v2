@@ -43,6 +43,7 @@ const zh: BaseTranslation = {
 	// Type of content
 	[ContentTypeEnum.Course]: '课程',
 	[ContentTypeEnum.Bootcamp]: '训练营',
+	[ContentTypeEnum.Lesson]: '文章',
 	[ContentTypeEnum.Roadmap]: '学习路线',
 	[ContentTypeEnum.Quickstart]: '模板',
 	[ContentTypeEnum.Resources]: '资源',

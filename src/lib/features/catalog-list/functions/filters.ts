@@ -17,6 +17,10 @@ export const typeOfContentFilter: Filter = {
 		},
 		{
 			icon: 'icon',
+			slug: ContentTypeEnum.Lesson
+		},
+		{
+			icon: 'icon',
 			slug: ContentTypeEnum.Roadmap
 		},
 		{

@@ -44,6 +44,7 @@ const ru: BaseTranslation = {
 	// Type of content
 	[ContentTypeEnum.Course]: 'Курс',
 	[ContentTypeEnum.Bootcamp]: 'Буткемп',
+	[ContentTypeEnum.Lesson]: 'Урок',
 	[ContentTypeEnum.Roadmap]: 'Дорожная карта',
 	[ContentTypeEnum.Quickstart]: 'Шаблоны',
 	[ContentTypeEnum.Resources]: 'Ресурсы',

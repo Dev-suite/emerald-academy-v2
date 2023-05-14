@@ -43,6 +43,7 @@ const es: Translation = {
 	// Type of content
 	[ContentTypeEnum.Course]: 'Curso',
 	[ContentTypeEnum.Bootcamp]: 'Bootcamp',
+	[ContentTypeEnum.Lesson]: 'Lección',
 	[ContentTypeEnum.Roadmap]: 'Camino de aprendizaje',
 	[ContentTypeEnum.Quickstart]: 'Plantillas',
 	[ContentTypeEnum.Resources]: 'Recursos',

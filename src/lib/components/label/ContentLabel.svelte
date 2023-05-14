@@ -23,6 +23,8 @@
 	<Label size="small" iconLeft="tabler:link" {color} {state} hasBorder={false}><slot /></Label>
 {:else if type === ContentTypeEnum.Tutorial}
 	<Label size="small" iconLeft="tabler:news" {color} {state} hasBorder={false}><slot /></Label>
+{:else if type === ContentTypeEnum.Lesson}
+	<Label size="small" iconLeft="tabler:pencil" {color} {state} hasBorder={false}><slot /></Label>
 {:else if type === SubjectsEnum.Backend}
 	<Label size="small" {color} {state} hasBorder={false}><slot /></Label>
 {:else if type === SubjectsEnum.IPFS}

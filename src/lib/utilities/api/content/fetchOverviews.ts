@@ -9,7 +9,8 @@ export const fetchOverviews = async (
 		| ContentTypeEnum.Bootcamp
 		| ContentTypeEnum.Course
 		| ContentTypeEnum.Quickstart
-		| ContentTypeEnum.Roadmap,
+		| ContentTypeEnum.Roadmap
+		| ContentTypeEnum.Lesson,
 	locale?: Locales
 ) => {
 	let overviews;
@@ -31,6 +32,10 @@ export const fetchOverviews = async (
 			overviews = import.meta.glob('/src/lib/content/roadmaps/**/*.ts');
 			break;
 
+		case ContentTypeEnum.Lesson:
+			overviews = import.meta.glob('/src/lib/content/lessons/**/**/*.ts');
+			break;
+
 		case undefined:
 			overviews = import.meta.glob('/src/lib/content/**/**/*.ts');
 	}
@@ -39,8 +44,8 @@ export const fetchOverviews = async (
 
 	const thisLangFiles = locale
 		? iterableFiles.filter(([path]) => {
-				return path.split('/')[6] == locale;
-		  })
+			return path.split('/')[6] == locale;
+		})
 		: iterableFiles;
 
 	const allOverviews = await Promise.all(
